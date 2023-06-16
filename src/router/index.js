@@ -15,6 +15,11 @@ const routes = [
     component: FoodsView,
   },
   {
+    path: "/drinks",
+    name: "drinks",
+    component: FoodsView,
+  },
+  {
     path: "/cart",
     name: "cart",
     component: CartView,

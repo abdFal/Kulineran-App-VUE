@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 border-bottom mb-2">
     <div class="container-fluid">
-      <h2 class="fs-3 mx-3 text-success" href="">
+      <h2 class="fs-3 mx-3 text-success" id="Logo-App" href="">
         <font-awesome-icon icon="utensils" /> Kulineran
       </h2>
       <button
@@ -27,27 +27,34 @@
               >Foods</router-link
             >
           </li>
-        </ul>
-        <form class="container-fluid">
-          <div class="input-group">
-            <span
-              class="input-group-text bg-success text-light"
-              id="basic-addon1"
-              >Find..</span
+          <li class="nav-item">
+            <router-link to="/drinks" class="nav-link fw-light text-secondary"
+              >Drink</router-link
             >
+          </li>
+        </ul>
+        <form class="d-flex mx-auto">
+          <!-- Tambahkan kelas mx-auto di sini -->
+          <div class="input-group">
+            <span class="input-group-text" id="addon-wrapping"
+              ><font-awesome-icon icon="fa-search"
+            /></span>
+
             <input
               type="text"
-              class="form-control border-bottom"
+              class="form-control border rounded-3"
               placeholder="Search Foods..."
               aria-label="Search Foods..."
               aria-describedby="basic-addon1"
             />
           </div>
         </form>
-        <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link to="/cart" class="text-secondary icon-link"
-              ><h5><font-awesome-icon icon="bag-shopping" /></h5>
+            <router-link to="/cart" class="text-secondary icon-link">
+              <p class="text-dark display-5 my-auto">
+                Keranjang <font-awesome-icon icon="bag-shopping" />
+              </p>
             </router-link>
           </li>
         </ul>

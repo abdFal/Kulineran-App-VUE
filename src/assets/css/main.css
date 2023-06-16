@@ -3,3 +3,10 @@
   font-weight: bold;
   border-bottom: 2px solid greenyellow;
 }
+#Logo-App {
+  color: rgb(151, 224, 41) !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
