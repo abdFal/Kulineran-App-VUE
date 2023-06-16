@@ -18,10 +18,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <router-link to="/" class="nav-link">Home</router-link>
+            <router-link to="/" class="nav-link fw-light text-secondary"
+              >Home</router-link
+            >
           </li>
           <li class="nav-item">
-            <router-link to="/foods" class="nav-link">Foods</router-link>
+            <router-link to="/foods" class="nav-link fw-light text-secondary"
+              >Foods</router-link
+            >
           </li>
         </ul>
         <form class="container-fluid">

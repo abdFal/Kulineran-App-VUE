@@ -11,6 +11,7 @@ library.add(faUtensils);
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
+import "./assets/css/main.css";
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)
