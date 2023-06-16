@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 border-bottom mb-2">
-    <div class="container">
-      <h2 class="fs-3 mx-3 text-success" href="">Kulineran</h2>
+    <div class="container-fluid">
+      <h2 class="fs-3 mx-3 text-success" href="">
+        <font-awesome-icon icon="utensils" /> Kulineran
+      </h2>
       <button
         class="navbar-toggler"
         type="button"
@@ -24,20 +26,24 @@
         </ul>
         <form class="container-fluid">
           <div class="input-group">
-            <span class="input-group-text" id="basic-addon1">Find..</span>
+            <span
+              class="input-group-text bg-success text-light"
+              id="basic-addon1"
+              >Find..</span
+            >
             <input
               type="text"
-              class="form-control"
+              class="form-control border-bottom"
               placeholder="Search Foods..."
               aria-label="Search Foods..."
               aria-describedby="basic-addon1"
             />
           </div>
         </form>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link to="/cart" class="text-secondary icon-link"
-              >Cart
+              ><h5><font-awesome-icon icon="bag-shopping" /></h5>
             </router-link>
           </li>
         </ul>
@@ -49,7 +55,6 @@
 <script>
 export default { name: "NavigationBar" };
 </script>
-
 <style>
 * {
   font-family: "Cabin";
