@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div>
     <NavigationBar />
-    <h2 class="text-center text-success">Home</h2>
+    <h2 class="text-center text-primary">Daftar Makanan</h2>
   </div>
 </template>
 
@@ -10,9 +10,10 @@
 import NavigationBar from "@/components/NavigationBar.vue";
 
 export default {
-  name: "HomeView",
+  name: "FoodsView",
   components: {
     NavigationBar,
   },
 };
 </script>
+<style></style>

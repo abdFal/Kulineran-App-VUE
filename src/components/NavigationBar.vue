@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <b-container fluid class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary py-3 border-bottom mb-2">
+    <div class="container">
+      <h2 class="fs-3 mx-3 text-success" href="">Kulineran</h2>
       <button
         class="navbar-toggler"
         type="button"
@@ -16,43 +16,33 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
+            <router-link to="/foods" class="nav-link">Foods</router-link>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="container-fluid">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">Find..</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search Foods..."
+              aria-label="Search Foods..."
+              aria-describedby="basic-addon1"
+            />
+          </div>
         </form>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <router-link to="/cart" class="text-secondary icon-link"
+              >Cart
+            </router-link>
+          </li>
+        </ul>
       </div>
-    </b-container>
+    </div>
   </nav>
 </template>
 
@@ -60,4 +50,8 @@
 export default { name: "NavigationBar" };
 </script>
 
-<style></style>
+<style>
+* {
+  font-family: "Cabin";
+}
+</style>
