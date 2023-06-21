@@ -46,15 +46,11 @@
             </router-link>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+        <div class="quotes">
+          <p class="text-muted my-auto">
+            <font-awesome-icon icon="cloud" /> Solusi Orang Laper tp mager
+          </p>
+        </div>
       </div>
     </div>
   </nav>

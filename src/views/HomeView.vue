@@ -7,7 +7,13 @@
 
       <div class="row my-2">
         <div class="col">
-          <h2 class="fw-semibold">Best <strong>Foods</strong></h2>
+          <h2 class="fw-semibold">
+            Best
+            <strong
+              >Foods
+              <font-awesome-icon icon="fa-star" style="color: rgb(195, 255, 0)"
+            /></strong>
+          </h2>
         </div>
         <div class="col">
           <router-link to="/foods" class="btn btn-success float-right"
@@ -15,6 +21,7 @@
           >
         </div>
       </div>
+      <hr />
 
       <div class="row my-4 gap-1">
         <div

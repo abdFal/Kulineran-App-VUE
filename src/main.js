@@ -7,14 +7,18 @@ import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
-import { faBowlFood } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCloud } from "@fortawesome/free-solid-svg-icons";
+import { faBowlFood, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 library.add(faBagShopping);
 library.add(faUtensils);
 library.add(faArrowRight);
 library.add(faList);
-library.add(faEye);
+library.add(faEye, faStar);
+library.add(faCloud);
+library.add(faCartShopping);
 library.add(faBowlFood);
 
 import "bootstrap/dist/css/bootstrap.css";
