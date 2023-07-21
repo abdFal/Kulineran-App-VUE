@@ -40,10 +40,15 @@
           <h6 class="fw-bold text-muted">Rp. {{ product.harga }}</h6>
           <hr />
           <p class="fs-6 display-6">{{ product.deskripsi }}</p>
-          <form action="">
+          <form v-on="SubmitEvent">
             <div class="form-gruop">
-              <label for="jumlah_pesan">Jumlah Pesanan:</label>
-              <input type="number" class="form-control" />
+              <label for="jumlah_pesanan">Jumlah Pesanan:</label>
+              <input
+                type="number"
+                class="form-control"
+                v-model="pesan.jumlah_pesanan"
+                required
+              />
             </div>
             <div class="form-gruop">
               <label
@@ -56,12 +61,18 @@
                 rows="4"
                 class="form-control"
                 placeholder="Catatan Anda..."
+                v-model="pesan.catatan"
+                required
               ></textarea>
             </div>
+            <button
+              type="submit"
+              class="btn btn-md btn-outline-succeed mt-2"
+              @click="pemesanan"
+            >
+              + Pesan Sekarang
+            </button>
           </form>
-          <router-link class="btn btn-md btn-outline-succeed mt-2" to="/cart">
-            + Pesan Sekarang</router-link
-          >
         </div>
       </div>
     </div>
@@ -79,24 +90,37 @@ export default {
   data() {
     return {
       product: {},
+      pesan: {},
     };
   },
   methods: {
     setProduct(data) {
       this.product = data;
     },
+    pemesanan() {
+      this.pesan.products = this.product;
+      axios
+        .post("http://localhost:3000/keranjangs", this.pesan)
+        .then(() => {
+          this.$toast.open("Order Berhasill ", {
+            type: "success",
+            position: "top",
+            duration: 4000,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   mounted() {
     axios
-      .get("http://localhost:3000/best_products/" + this.$route.params.id)
+      .get("http://localhost:3000/products/" + this.$route.params.id)
       .then((response) => this.setProduct(response.data))
       .catch((error) => console.log(error));
   },
 };
 </script>
 
-<style>
-textarea {
-  resize: none;
-}
-</style>
+<style></style>
+src/views/FoodsDetail.vue

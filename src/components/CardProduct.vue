@@ -33,9 +33,9 @@ export default {
     },
     getDetailRoute(product) {
       if (product.is_best) {
-        return "/best_foods/" + product.id;
-      } else {
         return "/foods/" + product.id;
+      } else {
+        return "/food/" + product.id;
       }
     },
   },

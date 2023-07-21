@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <footer class="py-3 my-2">
-      <ul class="nav justify-content-center border-bottom pb-2 mb-1">
+      <ul class="nav justify-content-center border-bottom mt-5 pt-5 pb-2 mb-1">
         <li class="nav-item">
           <a href="#" class="nav-link text-success">Home</a>
         </li>
