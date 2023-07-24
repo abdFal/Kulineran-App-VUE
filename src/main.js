@@ -12,7 +12,7 @@ import { faCloud } from "@fortawesome/free-solid-svg-icons";
 import { faBowlFood, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ToastPlugin from "vue-toast-notification";
-import "vue-toast-notification/dist/theme-sugar.css";
+import "vue-toast-notification/dist/theme-bootstrap.css";
 
 library.add(faBagShopping);
 library.add(faUtensils);
@@ -23,12 +23,12 @@ library.add(faCloud);
 library.add(faCartShopping);
 library.add(faBowlFood);
 
-import "vue-toast-notification/dist/theme-bootstrap.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "./assets/css/main.css";
 
 createApp(App)
   .component("font-awesome-icon", FontAwesomeIcon)
-  .use(router, ToastPlugin)
+  .use(router)
+  .use(ToastPlugin)
   .mount("#app");

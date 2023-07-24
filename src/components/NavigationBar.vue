@@ -42,7 +42,9 @@
               to="/cart"
               class="nav-link fw-light text-warning keranjang"
             >
-              Keranjang <font-awesome-icon icon="bag-shopping" />
+              Keranjang <font-awesome-icon icon="bag-shopping" /> ({{
+                jumlah_pesanan.length
+              }})
             </router-link>
           </li>
         </ul>
@@ -57,7 +59,26 @@
 </template>
 
 <script>
-export default { name: "NavigationBar" };
+import axios from "axios";
+export default {
+  name: "NavigationBar",
+  data() {
+    return {
+      jumlah_pesanan: [],
+    };
+  },
+  methods: {
+    setJumlah(data) {
+      this.jumlah_pesanan = data;
+    },
+  },
+  mounted() {
+    axios
+      .get("http://localhost:3000/keranjangs")
+      .then((response) => this.setJumlah(response.data))
+      .catch((error) => console.log(error));
+  },
+};
 </script>
 <style>
 * {

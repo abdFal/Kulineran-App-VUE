@@ -4,6 +4,7 @@ import FoodsView from "../views/FoodsView.vue";
 import CartView from "../views/CartView.vue";
 import FoodsDetail from "../views/FoodsDetail.vue";
 import FoodDetail from "../views/FoodDetail.vue";
+import DrinksView from "../views/DrinksView.vue";
 
 const routes = [
   {
@@ -32,13 +33,9 @@ const routes = [
     component: CartView,
   },
   {
-    path: "/about",
-    name: "about",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/drinks",
+    name: "drinks",
+    component: DrinksView,
   },
 ];
 

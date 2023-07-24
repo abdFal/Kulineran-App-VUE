@@ -102,11 +102,7 @@ export default {
       axios
         .post("http://localhost:3000/keranjangs", this.pesan)
         .then(() => {
-          this.$toast.open("Order Berhasill ", {
-            type: "success",
-            position: "top",
-            duration: 4000,
-          });
+          window.alert("Success Order");
         })
         .catch((error) => {
           console.log(error);
@@ -123,4 +119,3 @@ export default {
 </script>
 
 <style></style>
-src/views/FoodsDetail.vue
