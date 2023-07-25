@@ -4,7 +4,7 @@ import router from "./router";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -16,7 +16,7 @@ import "vue-toast-notification/dist/theme-bootstrap.css";
 
 library.add(faBagShopping);
 library.add(faUtensils);
-library.add(faArrowRight);
+library.add(faArrowDown);
 library.add(faList);
 library.add(faEye, faStar);
 library.add(faCloud);

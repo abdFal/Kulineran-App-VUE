@@ -4,8 +4,16 @@
     <div class="container">
       <h5 class="text-muted text-center display-6 pt-2">~Welcome~</h5>
       <HeroView />
+      <div class="mx-auto mb-5 w-100 text-center">
+        <a
+          href="#food-home"
+          class="btn btn-outline-success rounded-4 btn-md px-4 me-sm-3"
+          ><font-awesome-icon icon="arrow-down" />
+          <span class="px-3">Pesan Sekarang</span></a
+        >
+      </div>
 
-      <div class="row my-2">
+      <div class="row my-2" id="food-home">
         <div class="col">
           <h2 class="fw-semibold">
             Best
@@ -71,3 +79,8 @@ export default {
   },
 };
 </script>
+<style>
+template {
+  scroll-behavior: smooth;
+}
+</style>

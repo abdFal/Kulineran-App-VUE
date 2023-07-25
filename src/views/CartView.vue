@@ -37,7 +37,13 @@
               <p class="col-1 card-text">Qty: {{ keranjang.jumlah_pesanan }}</p>
               <p class="col-2 card-text">Total</p>
               <a href="#" class="col-1 btn btn-success mx-1">Pay Now</a>
-              <a href="#" class="col-1 btn btn-danger mx-1">Hapus</a>
+              <button
+                type="submit"
+                @click="deleteItem(keranjang.id)"
+                class="col-1 btn btn-danger mx-1"
+              >
+                Hapus
+              </button>
             </div>
           </div>
         </div>
@@ -64,6 +70,16 @@ export default {
   methods: {
     setKeranjangs(data) {
       this.keranjangs = data;
+    },
+    deleteItem(itemId) {
+      axios
+        .delete(`http://localhost:3000/keranjangs/${itemId}`)
+        .then(() => {
+          this.keranjangs = this.keranjangs.filter(
+            (item) => item.id !== itemId
+          );
+        })
+        .catch((error) => console.log(error));
     },
   },
   mounted() {

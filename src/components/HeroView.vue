@@ -20,14 +20,6 @@
           loading="lazy"
         />
       </div>
-      <div class="mx-auto mb-5">
-        <a
-          href="#"
-          class="btn btn-outline-success rounded-4 btn-md px-4 me-sm-3"
-          ><font-awesome-icon icon="arrow-right" />
-          <span class="px-3">Pesan Sekarang</span></a
-        >
-      </div>
     </div>
   </div>
 </template>
