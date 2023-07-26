@@ -35,18 +35,49 @@
               <h5 class="col-2 card-title">{{ keranjang.products.nama }}</h5>
               <p class="col-2 card-text text-muted">{{ keranjang.catatan }}</p>
               <p class="col-1 card-text">Qty: {{ keranjang.jumlah_pesanan }}</p>
-              <p class="col-2 card-text">Total</p>
-              <a href="#" class="col-1 btn btn-success mx-1">Pay Now</a>
+              <p class="col-2 card-text">
+                Total: {{ keranjang.products.harga * keranjang.jumlah_pesanan }}
+              </p>
+              <router-link to="/foods" class="col-1 btn btn-sm btn-success mx-1"
+                >Nambah Lagi</router-link
+              >
               <button
                 type="submit"
                 @click="deleteItem(keranjang.id)"
-                class="col-1 btn btn-danger mx-1"
+                class="col-1 btn btn-sm btn-danger mx-1"
               >
                 Hapus
               </button>
             </div>
           </div>
         </div>
+      </div>
+      <div class="card py-3 px-3 my-3 text-start w-50 mx-auto">
+        <form @submit="submitCheckout">
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Pemesan:</label>
+            <input
+              type="text"
+              id="nama"
+              class="form-control"
+              v-model="nama"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="nomor_meja" class="form-label">Nomor Meja:</label>
+            <input
+              type="number"
+              id="nomor_meja"
+              class="form-control"
+              v-model="nomor_meja"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-md btn-primary text-center">
+            Bayar Sekarang (Rp. {{ totalPrice }})
+          </button>
+        </form>
       </div>
     </div>
   </div>
@@ -80,6 +111,13 @@ export default {
           );
         })
         .catch((error) => console.log(error));
+    },
+  },
+  computed: {
+    totalPrice() {
+      return this.keranjangs.reduce((total, keranjang) => {
+        return total + keranjang.products.harga * keranjang.jumlah_pesanan;
+      }, 0);
     },
   },
   mounted() {
