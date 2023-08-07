@@ -19,7 +19,18 @@
 
       <div class="row">
         <div class="col">
-          <h3 class="my-3">Keranjang <strong>Saya</strong></h3>
+          <div class="d-flex justify-content-between align-items-center my-3">
+            <div>
+              <h3>Keranjang <strong>Saya</strong></h3>
+            </div>
+            <div>
+              <router-link
+                to="/success"
+                class="btn btn-primary py-1 px-2 btn-sm"
+                >Merasa Sudah Pesan?</router-link
+              >
+            </div>
+          </div>
           <div class="text-start">
             <div
               class="row d-flex align-items-center justify-content-between card-body border border-bottom w-100"
@@ -53,14 +64,14 @@
         </div>
       </div>
       <div class="card py-3 px-3 my-3 text-start w-50 mx-auto">
-        <form @submit="submitCheckout">
+        <form @submit="submitCheckout" v-on="SubmitEvent">
           <div class="mb-3">
             <label for="nama" class="form-label">Nama Pemesan:</label>
             <input
               type="text"
               id="nama"
               class="form-control"
-              v-model="nama"
+              v-model="pesan.nama"
               required
             />
           </div>
@@ -70,7 +81,7 @@
               type="number"
               id="nomor_meja"
               class="form-control"
-              v-model="nomor_meja"
+              v-model="pesan.nomor_meja"
               required
             />
           </div>
@@ -96,6 +107,7 @@ export default {
   data() {
     return {
       keranjangs: [],
+      pesan: {},
     };
   },
   methods: {
@@ -111,6 +123,23 @@ export default {
           );
         })
         .catch((error) => console.log(error));
+    },
+    submitCheckout() {
+      if (this.pesan.nama && this.pesan.nomor_meja) {
+        this.pesan.keranjangs = this.keranjangs;
+        axios
+          .post("http://localhost:3000/pesanans", this.pesan)
+          .then(() => {
+            this.keranjangs.map(function (item) {
+              return axios.delete(
+                "http://localhost:3000/keranjangs/" + item.id
+              );
+            });
+          })
+          .catch((error) => console.log(error));
+        window.alert("Berhasil Checkout");
+        this.$router.push({ path: "/success" });
+      }
     },
   },
   computed: {

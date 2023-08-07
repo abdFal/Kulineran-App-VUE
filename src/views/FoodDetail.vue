@@ -102,11 +102,12 @@ export default {
       axios
         .post("http://localhost:3000/keranjangs", this.pesan)
         .then(() => {
-          window.alert("Success Order");
+          console.log("Success add to cart");
         })
         .catch((error) => {
           console.log(error);
         });
+      window.alert("Success Order");
     },
   },
   mounted() {

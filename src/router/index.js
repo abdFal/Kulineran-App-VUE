@@ -5,6 +5,7 @@ import CartView from "../views/CartView.vue";
 import FoodsDetail from "../views/FoodsDetail.vue";
 import FoodDetail from "../views/FoodDetail.vue";
 import DrinksView from "../views/DrinksView.vue";
+import SuccessFoods from "../views/SuccessFoods.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: "/drinks",
     name: "drinks",
     component: DrinksView,
+  },
+  {
+    path: "/success",
+    name: "success",
+    component: SuccessFoods,
   },
 ];
 
