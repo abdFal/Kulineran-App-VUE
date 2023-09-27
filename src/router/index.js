@@ -6,6 +6,7 @@ import FoodsDetail from "../views/FoodsDetail.vue";
 import FoodDetail from "../views/FoodDetail.vue";
 import DrinksView from "../views/DrinksView.vue";
 import SuccessFoods from "../views/SuccessFoods.vue";
+import OrderView from "../views/OrderView.vue";
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: "/success",
     name: "success",
     component: SuccessFoods,
+  },
+  {
+    path: "/order",
+    name: "order",
+    component: OrderView,
   },
 ];
 

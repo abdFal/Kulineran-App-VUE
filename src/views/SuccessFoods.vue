@@ -1,7 +1,10 @@
 <template>
   <NavigationBar />
-  <h2 class="text-center py-3">Pesanan <strong>Sukses</strong></h2>
-  <div class="overflow-hidden">
+  <h2 class="text-center pt-5">Pesanan <strong>Sukses</strong></h2>
+  <p class="text-center text-muted fs-6 display-6">
+    terimakasih sudah beli di kulineran :)
+  </p>
+  <div class="overflow-hidden text-center">
     <div class="container px-5 mx-auto d-flex justify-content-center">
       <img
         src="../assets/img/undraw_Order_confirmed_re_g0if.png"
@@ -12,6 +15,11 @@
         loading="lazy"
       />
     </div>
+    <router-link
+      to="/order"
+      class="btn btn-sm pt-1 px-2 mx-auto btn-success text-light text-center"
+      ><font-awesome-icon icon="eye" /> see my orders</router-link
+    >
   </div>
 </template>
 

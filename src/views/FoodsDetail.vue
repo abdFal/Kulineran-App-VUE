@@ -43,7 +43,12 @@
           <form action="">
             <div class="form-gruop">
               <label for="jumlah_pesan">Jumlah Pesanan:</label>
-              <input type="number" class="form-control" />
+              <input
+                type="number"
+                class="form-control"
+                v-model="pesan.jumlah_pesanan"
+                required
+              />
             </div>
             <div class="form-gruop">
               <label
@@ -56,12 +61,17 @@
                 rows="4"
                 class="form-control"
                 placeholder="Catatan Anda..."
+                v-model="pesan.catatan"
               ></textarea>
             </div>
+            <button
+              type="submit"
+              class="btn btn-md btn-outline-succeed mt-2"
+              @click="pemesanan"
+            >
+              + Pesan Sekarang
+            </button>
           </form>
-          <router-link class="btn btn-md btn-outline-succeed mt-2" to="/cart">
-            + Pesan Sekarang</router-link
-          >
         </div>
       </div>
     </div>
@@ -79,11 +89,28 @@ export default {
   data() {
     return {
       product: {},
+      pesan: {},
     };
   },
   methods: {
     setProduct(data) {
       this.product = data;
+    },
+    pemesanan() {
+      this.pesan.products = this.product;
+      if (this.pesan.jumlah_pesanan != null) {
+        axios
+          .post("http://localhost:3000/keranjangs", this.pesan)
+          .then(() => {
+            console.log("Success add to cart");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        window.alert("Success Order");
+      } else {
+        window.alert("Failed Order");
+      }
     },
   },
   mounted() {

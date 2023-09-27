@@ -47,6 +47,11 @@
               }})
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/order" class="nav-link fw-light text-succeed"
+              >My order <font-awesome-icon icon="clock-rotate-left"
+            /></router-link>
+          </li>
         </ul>
         <div class="quotes">
           <p class="text-muted my-auto">
