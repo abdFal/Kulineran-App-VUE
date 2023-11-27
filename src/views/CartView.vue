@@ -24,9 +24,7 @@
               <h3>Keranjang <strong>Saya</strong></h3>
             </div>
             <div>
-              <router-link
-                to="/success"
-                class="btn btn-primary py-1 px-2 btn-sm"
+              <router-link to="/order" class="btn btn-primary py-1 px-2 btn-sm"
                 >Merasa Sudah Pesan?</router-link
               >
             </div>
@@ -64,6 +62,9 @@
         </div>
       </div>
       <div class="card py-3 px-3 my-3 text-start w-50 mx-auto">
+        <h2 class="display-6 mx-auto text-success" id="Logo-App" href="">
+          <font-awesome-icon icon="utensils" /> Kulineran
+        </h2>
         <form @submit="submitCheckout" v-on="SubmitEvent">
           <div class="mb-3">
             <label for="nama" class="form-label">Nama Pemesan:</label>

@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <template>
+      <Toast />
+    </template>
     <router-view />
   </div>
   <FooterView />

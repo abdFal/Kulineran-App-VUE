@@ -16,7 +16,7 @@
               <router-link to="/foods" class="text-succeed">Foods</router-link>
             </li>
             <li class="breadcrumb-item active fw-bold" aria-current="page">
-              Detail
+              {{ product.nama }}
             </li>
           </ol>
         </nav>
@@ -107,9 +107,13 @@ export default {
           .catch((error) => {
             console.log(error);
           });
-        window.alert("Success Order");
+        this.$toast.success("Success add to cart!", {
+          position: "bottom",
+          duration: 7000,
+        });
+        this.$router.push("/foods/" + this.product.id);
       } else {
-        window.alert("Failed Order");
+        this.$toast.error("Order Failed", { position: "bottom" });
       }
     },
   },

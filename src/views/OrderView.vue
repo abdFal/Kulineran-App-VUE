@@ -13,6 +13,7 @@
         <div class="card p-3">
           <div class="card-title">
             <h4 class="fw-bold">{{ pesanan.nama }}</h4>
+            <h6 class="fw-bold">No. Meja:{{ pesanan.nomor_meja }}</h6>
           </div>
           <div class="card-body">
             <ul>

@@ -99,15 +99,22 @@ export default {
     },
     pemesanan() {
       this.pesan.products = this.product;
-      axios
-        .post("http://localhost:3000/keranjangs", this.pesan)
-        .then(() => {
-          console.log("Success add to cart");
-        })
-        .catch((error) => {
-          console.log(error);
+      if (this.pesan.jumlah_pesanan != null) {
+        axios
+          .post("http://localhost:3000/keranjangs", this.pesan)
+          .then(() => {
+            console.log("Success add to cart");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+        this.$toast.success("Success add to cart!", {
+          position: "bottom",
+          duration: 8000,
         });
-      window.alert("Success Order");
+      } else {
+        this.$toast.error("Order Failed", { position: "bottom" });
+      }
     },
   },
   mounted() {
