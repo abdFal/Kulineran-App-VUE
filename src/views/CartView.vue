@@ -126,7 +126,11 @@ export default {
         .catch((error) => console.log(error));
     },
     submitCheckout() {
-      if (this.pesan.nama && this.pesan.nomor_meja) {
+      if (
+        this.pesan.nama &&
+        this.pesan.nomor_meja &&
+        this.keranjangs.length !== 0
+      ) {
         this.pesan.keranjangs = this.keranjangs;
         axios
           .post("http://localhost:3000/pesanans", this.pesan)
@@ -138,8 +142,10 @@ export default {
             });
           })
           .catch((error) => console.log(error));
-        window.alert("Berhasil Checkout");
+        this.$toast.success("berhasil bayar!");
         this.$router.push({ path: "/success" });
+      } else {
+        this.$toast.error("Data masih belum lengkap!", { position: "bottom" });
       }
     },
   },

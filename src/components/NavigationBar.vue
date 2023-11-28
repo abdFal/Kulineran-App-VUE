@@ -55,7 +55,7 @@
         </ul>
         <div class="quotes">
           <p class="text-muted my-auto">
-            <font-awesome-icon icon="cloud" /> Solusi Orang Laper tp mager
+            <font-awesome-icon icon="bread-slice" /> Solusi Orang Laper tp mager
           </p>
         </div>
       </div>
