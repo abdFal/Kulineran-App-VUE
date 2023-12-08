@@ -22,10 +22,12 @@
               <p>{{ drink.deskripsi }}</p>
               <p class="text-muted fs-6 display-6">Rp. {{ drink.harga }}</p>
               <button
-                type="button"
+                type="submit"
                 class="btn btn-success"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
+                drink="'drink'"
+                @click="sendData(drink)"
               >
                 <font-awesome-icon icon="plus-square" /> Tambahkan Minuman
               </button>
@@ -45,7 +47,7 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <h1 class="modal-title fs-4" id="exampleModalLabel">
               Tambah Minuman
             </h1>
             <button
@@ -55,15 +57,18 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">...</div>
+          <div class="modal-body">
+            <p>{{ selectedDrink.nama }}</p>
+            <p>{{ selectedDrink.harga }}</p>
+          </div>
           <div class="modal-footer">
-            <button
+            <b-button
               type="button"
               class="btn btn-danger btn-sm"
               data-bs-dismiss="modal"
             >
               cancel
-            </button>
+            </b-button>
             <button type="button" class="btn btn-md btn-outline-succeed">
               +
             </button>
@@ -85,11 +90,15 @@ export default {
   data() {
     return {
       drinks: [],
+      selectedDrink: "",
     };
   },
   methods: {
     setProducts(data) {
       this.drinks = data.filter((drinks) => drinks.is_ready);
+    },
+    sendData(drink) {
+      this.selectedDrink = drink;
     },
   },
   mounted() {
