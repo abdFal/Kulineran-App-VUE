@@ -48,6 +48,14 @@
             </router-link>
           </li>
           <li class="nav-item">
+            <router-link
+              to="/cartdrinks"
+              class="nav-link fw-light text-warning keranjang"
+            >
+              Keranjang Minuman <font-awesome-icon icon="bag-shopping" />
+            </router-link>
+          </li>
+          <li class="nav-item">
             <router-link to="/order" class="nav-link fw-light text-succeed"
               >My order <font-awesome-icon icon="clock-rotate-left"
             /></router-link>

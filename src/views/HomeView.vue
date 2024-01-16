@@ -73,7 +73,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/best_products")
+      .get("https://jsonkeeper.com/b/8P1Q")
       .then((response) => this.setProducts(response.data))
       .catch((error) => console.log(error));
   },

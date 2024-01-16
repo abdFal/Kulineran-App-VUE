@@ -69,7 +69,11 @@
             >
               cancel
             </b-button>
-            <button type="button" class="btn btn-md btn-outline-succeed">
+            <button
+              type="submit"
+              class="btn btn-md btn-outline-succeed"
+              @click="pemesanan"
+            >
               +
             </button>
           </div>
@@ -89,7 +93,8 @@ export default {
   },
   data() {
     return {
-      drinks: [],
+      drinks: {},
+      pesan: {},
       selectedDrink: "",
     };
   },
@@ -99,6 +104,21 @@ export default {
     },
     sendData(drink) {
       this.selectedDrink = drink;
+    },
+    pemesanan() {
+      this.pesan.drinks = this.selectedDrink;
+      axios
+        .post("http://localhost:3000/keranjangs_minuman", this.pesan)
+        .then(() => {
+          console.log("Success add to cart");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      this.$toast.success("Success add to cart!", {
+        position: "bottom",
+        duration: 8000,
+      });
     },
   },
   mounted() {
